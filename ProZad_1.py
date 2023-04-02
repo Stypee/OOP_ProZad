@@ -6,8 +6,17 @@ korisnik = {
 
 korisnik['ime'] = input('Unesite ime korisnika: ').capitalize()
 korisnik['prezime'] = input('Unesite prezime korisnika: ').capitalize()
-korisnik['telefon'] = int(input('Unesite telefon korisnika: '))
+# korisnik['telefon'] = int(input('Unesite telefon korisnika: '))
 korisnik['email'] = input('Unesite email korisnika: ').strip()
+
+telefon = {
+
+}
+
+telefon['pozivni_br'] = int(input('Unesite pozivni broj: '))
+telefon['telefonski_br'] = int(input('Unesite telefonski broj: '))
+telefon['proizvodac'] = str(input('Unesite ime proizvodaca: '))
+korisnik['telefon'] = telefon
 
 artikal = {
 
@@ -33,6 +42,8 @@ print('Informacije o artiklu:\n\t Naslov:',prodaja['artikal']['naslov'],'\n\t Op
       '\n\t Cijena:',prodaja['artikal']['cijena'],'\n Datum isteka prodaje:\n\t Dan:',prodaja['datum'].day,
       '\n\t Mjesec:',prodaja['datum'].month,'\n\t Godina:',prodaja['datum'].year,'\n Informacije o korisniku:\n\t',
       prodaja['korisnik']['ime'],prodaja['korisnik']['prezime'],'\n\t Telefon:',prodaja['korisnik']['telefon'],'\n\t Email:',prodaja['korisnik']['email'])
+
+print('Pozivni broj:',korisnik['telefon']['pozivni_br'],'Telefonski broj: ',korisnik['telefon']['telefonski_br'],'Proizvodac: ',korisnik['telefon']['proizvodac'])
 
 
 
