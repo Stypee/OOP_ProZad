@@ -67,7 +67,7 @@ for i in range(1,br_prodaja+1):
     odabrani_artikl = int(input('Odabrani artikl: '))
     prodaja['artikl'] = kategorije[odabrana_kategorija-1]['artikli'][odabrani_artikl-1]
     prodaje.append(prodaja)
-
+    
 
 for i,prodaja in enumerate(prodaje, start = 1):
     print(f"Prodaja {i}")
