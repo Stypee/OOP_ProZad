@@ -3,7 +3,8 @@ def get_kategorija(redni_broj, kategorija):
     print(f"{redni_broj}. {kategorija['naziv']}")
 
 def ispis_svih_kategorija(kategorije):
-    for i,kategorija in enumerate(kategorije, start = 0):
+    for kategorija in kategorije:
         print(f"{kategorija['naziv']}")
-        ispis_artikla(kategorije[i]['artikli'])
+        for kategorija['artikl'] in kategorija['artikli']:
+            ispis_artikla(kategorija['artikl'])
 

@@ -37,4 +37,3 @@ while running:
     if akcija == 7:
         running = False
 
-#TODO error -> nemogu nikako ispisat sve kategorije, modul ispis_kategorije

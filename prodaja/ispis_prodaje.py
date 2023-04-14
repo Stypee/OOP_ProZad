@@ -13,5 +13,5 @@ def ispis_prodaje(prodaja):
 
 def ispis_svih_prodaja(prodaje):
     for prodaja in prodaje:
-        ispis_svih_prodaja(prodaje)
+        ispis_prodaje(prodaja)
 
