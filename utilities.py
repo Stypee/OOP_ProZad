@@ -68,5 +68,24 @@ def unos_intervala(min, max):
             return broj
 
 
+def unos_telefona(poruka):
+    while True:
+        try:
+            broj = unos_pozitivnog_cijelog_broja(poruka)
+
+            broj_znamenki = str(broj)
+
+            if len(broj_znamenki) != 8:
+                raise Exception('Broj mora imati 8 znamenki!')
+
+        except Exception as e:
+            print(e)
+
+        else:
+            return broj
+
+
+
+
 
 
