@@ -1,11 +1,11 @@
-from utilities import unos_pozitivnog_cijelog_broja, unos_telefona
+from .korisnik import Korisnik
+from utilities import unos_telefona
 def unos_korisnika(redni_broj):
-    korisnik = {
-    }
 
-    korisnik['ime'] = input(f'Unesite ime {redni_broj}. korisnika: ').capitalize()
-    korisnik['prezime'] = input(f'Unesite prezime {redni_broj}. korisnika: ').capitalize()
-    korisnik['telefon'] = unos_telefona(f'Unesite telefon {redni_broj}. korisnika: ')
-    korisnik['email'] = input(f'Unesite email {redni_broj}. korisnika: ').strip()
 
-    return korisnik
+    ime = input(f'Unesite ime {redni_broj}. korisnika: ').capitalize()
+    prezime = input(f'Unesite prezime {redni_broj}. korisnika: ').capitalize()
+    telefon = unos_telefona(f'Unesite telefon {redni_broj}. korisnika: ')
+    email = input(f'Unesite email {redni_broj}. korisnika: ').strip()
+
+    return Korisnik(ime, prezime, telefon, email)

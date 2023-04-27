@@ -37,3 +37,4 @@ while running:
     if akcija == 7:
         running = False
 
+
