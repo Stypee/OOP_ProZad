@@ -1,9 +1,10 @@
 class Korisnik:
-    def __init__(self, ime, prezime, email, telefon):
+    def __init__(self, ime, prezime, email, telefon, kartica):
         self.__ime = ime
         self.__prezime = prezime
         self.__email = email
         self.__telefon = telefon
+        self.kartica = kartica
     @property
     def ime(self):
         return self.__ime
@@ -30,3 +31,5 @@ class Korisnik:
         print(f"\tPrezime: {self.__prezime}")
         print(f"\tTelefon: {self.__telefon}")
         print(f"\tEmail: {self.__email}")
+        self.kartica.ispis()
+
