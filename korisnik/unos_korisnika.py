@@ -1,17 +1,29 @@
-from .korisnik import Korisnik
-from .kartica import BankovnaKartica
-from utilities import unos_telefona
+from .privatni_korisnik import PrivatniKorisnik
+from .poslovni_korisnik import PoslovniKorisnik
+from utilities import unos_telefona, unos_intervala
+
 def unos_korisnika(redni_broj):
 
-
-    ime = input(f'Unesite ime {redni_broj}. korisnika: ').capitalize()
-    prezime = input(f'Unesite prezime {redni_broj}. korisnika: ').capitalize()
     telefon = unos_telefona(f'Unesite telefon {redni_broj}. korisnika: ')
     email = input(f'Unesite email {redni_broj}. korisnika: ').strip()
-    iban = input(f'Unesite iban {redni_broj}. kartice: ')
-    pin = input(f'Unesite pin {redni_broj}. kartice: ')
-    kratki_broj = input(f'Unesite kratki broj {redni_broj}. kartice: ')
 
-    kartica = BankovnaKartica(iban, pin, kratki_broj)
+    print("Tipovi korisnika: ")
+    print("\t 1. Poslovni korisnik")
+    print("\t 2. Privatni korisnik")
 
-    return Korisnik(ime, prezime, telefon, email, kartica)
+    tip_korisnika = unos_intervala(1,2)
+
+    if tip_korisnika == 1:
+        naziv = input(f'Unesite naziv {redni_broj}. korisnika: ')
+        web = input(f'Unesite web stranicu {redni_broj}. korisnika: ')
+
+        return PoslovniKorisnik(naziv, web, telefon, email)
+
+    elif tip_korisnika == 2:
+        ime = input(f'Unesite ime {redni_broj}. korisnika: ').capitalize()
+        prezime = input(f'Unesite prezime {redni_broj}. korisnika: ').capitalize()
+
+        return PrivatniKorisnik(ime, prezime, telefon, email)
+
+
+

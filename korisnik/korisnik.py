@@ -1,35 +1,20 @@
-class Korisnik:
-    def __init__(self, ime, prezime, email, telefon, kartica):
-        self.__ime = ime
-        self.__prezime = prezime
-        self.__email = email
-        self.__telefon = telefon
-        self.kartica = kartica
-    @property
-    def ime(self):
-        return self.__ime
+from abc import ABC,abstractmethod
 
-    @ime.setter
-    def ime(self, ime):
-        self.__ime = ime
-    @property
-    def prezime(self):
-        return self.__prezime
+class Korisnik(ABC):
+    def __init__(self, email, telefon):
+        self._email = email
+        self._telefon = telefon
 
-    @prezime.setter
-    def prezime(self, prezime):
-        self.__prezime = prezime
     @property
     def email(self):
-        return self.__email
+        return self._email
+
     @property
     def telefon(self):
-        return self.__telefon
+        return self._telefon
+
+    @abstractmethod
     def ispis(self):
-        print('Informacije o korisniku: ')
-        print(f"\tIme: {self.__ime}")
-        print(f"\tPrezime: {self.__prezime}")
-        print(f"\tTelefon: {self.__telefon}")
-        print(f"\tEmail: {self.__email}")
-        self.kartica.ispis()
+        pass
+
 
