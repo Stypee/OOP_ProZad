@@ -4,3 +4,4 @@ from .artikl import Artikl
 from .vozilo import Vozilo
 from .automobil import Automobil
 from .stan import Stan
+from .instrukcije import Instrukcije

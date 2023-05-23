@@ -2,8 +2,8 @@ from .korisnik import Korisnik
 
 class PoslovniKorisnik(Korisnik):
 
-    def __init__(self, naziv, web, email, telefon):
-        super().__init__(email, telefon)
+    def __init__(self, naziv, web, email, telefon, oib):
+        super().__init__(email, telefon, oib)
         self.__naziv = naziv
         self.__web = web
 
@@ -29,3 +29,4 @@ class PoslovniKorisnik(Korisnik):
       print(f'\tWeb: {self.__web}')
       print(f'\tTelefon: {self.telefon}')
       print(f'\tEmail: {self.email}')
+      print(f'\tOIB: {self.oib}')

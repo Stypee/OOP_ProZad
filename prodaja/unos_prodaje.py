@@ -3,6 +3,7 @@ from kategorija import get_kategorija
 from artikl import get_artikl
 from utilities import unos_datuma, unos_intervala
 from .prodaja import Prodaja
+
 def unos_prodaje(korisnici, kategorije, redni_broj):
 
     datum = unos_datuma('Unesite dan isteka prodaje: ')

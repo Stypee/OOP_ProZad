@@ -1,5 +1,5 @@
-from utilities import unos_pozitivnog_realnog_broja, unos_intervala
-from .artikl import Artikl
+from utilities import unos_pozitivnog_realnog_broja, unos_intervala, unos_datuma
+from .instrukcije import Instrukcije
 from .automobil import Automobil
 from .stan import Stan
 
@@ -12,8 +12,9 @@ def unos_artikla(redni_broj):
     print('Tipovi artikla: ')
     print('\t 1. Stan')
     print('\t 2. Automobil')
+    print('\t 3. Instrukcije')
 
-    tip_artikla = unos_intervala(1,2)
+    tip_artikla = unos_intervala(1,3)
 
     if tip_artikla == 1:
         kvadratura = unos_pozitivnog_realnog_broja(f'Unesite kvadraturu {redni_broj}. stana: ')
@@ -24,5 +25,11 @@ def unos_artikla(redni_broj):
         snaga = unos_pozitivnog_realnog_broja(f'Unesite snagu {redni_broj}. auta: ')
 
         return Automobil(snaga, naslov, opis, cijena)
+
+    elif tip_artikla == 3:
+        ime_predmeta = input(f'Unesite ime {redni_broj}. predmeta: ')
+        datum_odrzavanja = unos_datuma(f'Unesite dan održavanja: ')
+
+        return Instrukcije(ime_predmeta, datum_odrzavanja, naslov, opis, cijena)
 
 

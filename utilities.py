@@ -39,8 +39,8 @@ def unos_datuma(poruka):
     while True:
         try:
             dan = int(input(poruka))
-            mjesec = int(input('Unesite mjesec isteka prodaje: '))
-            godina = int(input('Unesite godinu isteka prodaje: '))
+            mjesec = int(input('Unesite mjesec : '))
+            godina = int(input('Unesite godinu : '))
             datum = date(godina, mjesec, dan)
 
         except ValueError as e:
@@ -86,10 +86,10 @@ def unos_telefona(poruka):
         else:
             return broj
 
-def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web):
+def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web, oib):
     while True:
         try:
-            if len(telefon) == 0 or len(email) == 0 or len(ime_ili_naziv) == 0 or len(prezime_ili_web) == 0:
+            if len(telefon) == 0 or len(email) == 0 or len(ime_ili_naziv) == 0 or len(prezime_ili_web) == 0 or len(oib) == 0:
                 raise IznimkaPrazanTekst()
             elif len(str(telefon)) != 8:
                 raise IznimkaTelefon()
