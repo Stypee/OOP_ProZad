@@ -86,10 +86,10 @@ def unos_telefona(poruka):
         else:
             return broj
 
-def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web, oib):
+def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web):
     while True:
         try:
-            if len(telefon) == 0 or len(email) == 0 or len(ime_ili_naziv) == 0 or len(prezime_ili_web) == 0 or len(oib) == 0:
+            if len(telefon) == 0 or len(email) == 0 or len(ime_ili_naziv) == 0 or len(prezime_ili_web) == 0:
                 raise IznimkaPrazanTekst()
             elif len(str(telefon)) != 8:
                 raise IznimkaTelefon()
@@ -104,6 +104,36 @@ def provjera_korisnickog_unos(telefon, email, ime_ili_naziv, prezime_ili_web, oi
 
         except ValueError:
             return ('Telefon mora biti broj')
+
+        else:
+            return None
+
+def provjera_unosa_artikla(naslov, opis, cijena, snaga_kvadratura):
+    while True:
+        try:
+            if len(naslov) == 0 or len(opis) == 0 or len(cijena) == 0 or len(snaga_kvadratura) == 0:
+                raise IznimkaPrazanTekst()
+
+            int(snaga_kvadratura)
+            int(cijena)
+
+        except IznimkaPrazanTekst as e:
+            return str(e)
+
+        except ValueError:
+            return ('Mora biti broj')
+
+        else:
+            return None
+
+def provjera_unosa_prodaje(korisnik, prodaja):
+    while True:
+        try:
+            if korisnik == '' or prodaja == '':
+                raise IznimkaPrazanTekst()
+
+        except IznimkaPrazanTekst as e:
+            return str(e)
 
         else:
             return None

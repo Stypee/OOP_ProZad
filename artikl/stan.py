@@ -2,7 +2,7 @@ from .artikl import Artikl
 
 class Stan(Artikl):
 
-    def __init__(self, kvadratura, naslov, opis, cijena):
+    def __init__(self, naslov, opis, cijena, kvadratura):
         super().__init__(naslov, opis, cijena)
         self.kvadratura = kvadratura
 

@@ -94,15 +94,6 @@ class App(QtWidgets.QMainWindow):
         self.text_web.setGeometry(QtCore.QRect(150, offset * 5, 150, 25))
         self.text_web.hide()
 
-        #Label oib
-        self.label_oib = QtWidgets.QLabel(self)
-        self.label_oib.setFont(self.font)
-        self.label_oib.setText('OIB')
-        self.label_oib.move(50, offset * 6)
-
-        #Input oib
-        self.text_oib = QtWidgets.QLineEdit(self)
-        self.text_oib.setGeometry(QtCore.QRect(150, offset * 6, 150, 25))
 
         #Label error
         self.label_error = QtWidgets.QLabel(self)
@@ -143,17 +134,16 @@ class App(QtWidgets.QMainWindow):
 
         if self.tip_korisnika.currentText() == TipKorisnika.PRIVATNI.value:
             error_privatni = provjera_korisnickog_unos(self.text_telefon.text(), self.text_email.text()
-                                                   ,self.text_ime.text() or self.text_naziv, self.text_prezime.text(), self.text_oib.text())
+                                                   ,self.text_ime.text() or self.text_naziv, self.text_prezime.text())
             if error_privatni is None:
                 korisnici.append(PrivatniKorisnik(self.text_ime.text(), self.text_prezime.text(),
-                                                 self.text_email.text(), self.text_telefon.text(), self.text_oib.text()))
+                                                 self.text_email.text(), self.text_telefon.text()))
                 self.text_telefon.setText('')
                 self.text_email.setText('')
                 self.text_naziv.setText('')
                 self.text_web.setText('')
                 self.text_ime.setText('')
                 self.text_prezime.setText('')
-                self.text_oib.setText('')
                 self.label_error.setText('')
 
                 korisnik = korisnici[len(korisnici)-1]
@@ -163,17 +153,16 @@ class App(QtWidgets.QMainWindow):
 
         elif self.tip_korisnika.currentText() == TipKorisnika.POSLOVNI.value:
             error_poslovni = provjera_korisnickog_unos(self.text_telefon.text(), self.text_email.text()
-                                                       , self.text_naziv.text(), self.text_web.text(), self.text_oib.text())
+                                                       , self.text_naziv.text(), self.text_web.text())
             if error_poslovni is None:
                 korisnici.append(PoslovniKorisnik(self.text_naziv.text(), self.text_web.text(),
-                                              self.text_email.text(), self.text_telefon.text(), self.text_oib.text()))
+                                              self.text_email.text(), self.text_telefon.text()))
                 self.text_telefon.setText('')
                 self.text_email.setText('')
                 self.text_naziv.setText('')
                 self.text_web.setText('')
                 self.text_ime.setText('')
                 self.text_prezime.setText('')
-                self.text_oib.setText('')
                 self.label_error.setText('')
 
                 korisnik = korisnici[len(korisnici)-1]

@@ -3,7 +3,7 @@ from .artikl import Artikl
 
 class Automobil(Artikl,Vozilo):
 
-    def __init__(self, snaga, naslov, opis, cijena):
+    def __init__(self, naslov, opis, cijena, snaga):
         super().__init__(naslov, opis, cijena)
         self.snaga = snaga
 
